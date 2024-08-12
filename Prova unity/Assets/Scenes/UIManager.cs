@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
     }
     #endregion
     [SerializeField] Button[] butons;
-    [SerializeField] TextMeshProUGUI segenciatexto, acertotexto, erroutexto;
+    [SerializeField] TextMeshProUGUI sequnciatexto, acertotexto, erroutexto;
 
     void Start()
     {
@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour
     {
         segenciatexto.text = null;
     }
-    public void atualizarseguencia(string color)
+    public void atualizarsequencia(string color)
     {
         color += segenciatexto.text;
     }
