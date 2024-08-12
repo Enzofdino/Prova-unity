@@ -45,7 +45,7 @@ public class UIManager : MonoBehaviour
     {
         segenciatexto.text = null;
     }
-    public void atualizarseguencia(string color)
+    public void atualizarsequencia(string color)
     {
         color += segenciatexto.text;
     }

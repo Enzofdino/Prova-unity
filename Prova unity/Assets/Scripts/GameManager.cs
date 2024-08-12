@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     static public GameManager instance;
     int cordavez, acertos, erros;
-    [SerializeField] int[] segencia;
+    [SerializeField] int[] sequencia;
     [SerializeField] string[] nomes;
     #region
     private void Awake()
@@ -24,13 +24,13 @@ public class GameManager : MonoBehaviour
     void gerarseguencias()
     {
         cordavez = 0;
-        segencia[Random.Range(3, nomes.Length)].ToString();
+        sequencia[Random.Range(3, nomes.Length)].ToString();
         UIManager.instance.limpartexto();
-        for (int i = 0; i < segencia.Length; i++)
+        for (int i = 0; i < sequencia.Length; i++)
         {
             // vai dar errado
-            segencia[Random.Range(0, nomes.Length)].ToString();
-            UIManager.instance.atualizarseguencia(nomes[segencia[i]]);
+            sequencia[Random.Range(0, nomes.Length)].ToString();
+            UIManager.instance.atualizarsequencia(nomes[sequencia[i]]);
         }
     }
     public void checarcor(int corindex)
@@ -39,13 +39,13 @@ public class GameManager : MonoBehaviour
         {
             cordavez++;
         }
-        if (cordavez == segencia.Length)
+        if (cordavez == sequencia.Length)
         {
             acertos++;
             UIManager.instance.atualizaracertos(acertos);
             gerarseguencias();
         }
-        if (cordavez != segencia.Length)
+        if (cordavez != sequencia.Length)
         {
             erros++;
             UIManager.instance.atualizarerros(erros);
