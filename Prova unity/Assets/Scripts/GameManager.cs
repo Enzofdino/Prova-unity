@@ -20,11 +20,7 @@ public class GameManager : MonoBehaviour
         gerarseguencias();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
     void gerarseguencias()
     {
         cordavez = 0;
