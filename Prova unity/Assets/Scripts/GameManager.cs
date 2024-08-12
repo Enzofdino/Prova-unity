@@ -17,19 +17,19 @@ public class GameManager : MonoBehaviour
     #endregion
     void Start()
     {
-        gerarseguencias();
+        gerarsequencias();
     }
 
 
-    void gerarseguencias()
+    void gerarsequencias()
     {
         cordavez = 0;
-        sequencia[Random.Range(3, nomes.Length)].ToString();
+        sequencia[Random.Range(3, nomes.Length)]++;
         UIManager.instance.limpartexto();
         for (int i = 0; i < sequencia.Length; i++)
         {
             // vai dar errado
-            sequencia[Random.Range(0, nomes.Length)].ToString();
+           sequencia[Random.Range(0, nomes.Length)]++;
             UIManager.instance.atualizarsequencia(nomes[sequencia[i]]);
         }
     }
@@ -43,13 +43,13 @@ public class GameManager : MonoBehaviour
         {
             acertos++;
             UIManager.instance.atualizaracertos(acertos);
-            gerarseguencias();
+            gerarsequencias();
         }
         if (cordavez != sequencia.Length)
         {
             erros++;
             UIManager.instance.atualizarerros(erros);
-            gerarseguencias();
+            gerarsequencias();
         }
     }
 
