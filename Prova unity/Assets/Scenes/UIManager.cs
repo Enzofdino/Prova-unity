@@ -20,5 +20,31 @@ public class UIManager : MonoBehaviour
     [SerializeField] Button[] butons;
     [SerializeField] TextMeshProUGUI segenciatexto, acertotexto, erroutexto;
 
+    void Start()
+    {
+        for (int i = 0; i < butons.Length; i++)
+        {
+            int x = i;
+            butons[i].onClick.AddListener(() => GameManager.instance.checarcor(x));
+        }
+    }
+    public void atualizaracertos(int acerto)
+    {
+        acertotexto.text = acerto.ToString();
+    }
+    public void atualizarerros(int erros)
+    {
+        erroutexto.text = erros.ToString();
+    }
+    public void limpartexto()
+    {
+        segenciatexto.text = null;
+    }
+    public void atualizarseguencia(string color)
+    {
+        color += segenciatexto.text;
+    }
+}
+
 
 }
