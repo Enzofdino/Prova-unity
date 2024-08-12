@@ -33,5 +33,24 @@ public class GameManager : MonoBehaviour
             UIManager.instance.atualizarseguencia(nomes[segencia[i]]);
         }
     }
-
+    public void checarcor(int corindex)
+    {
+        if (cordavez == corindex)
+        {
+            cordavez++;
+        }
+        if (cordavez == segencia.Length)
+        {
+            acertos++;
+            UIManager.instance.atualizaracertos(acertos);
+            gerarseguencias();
+        }
+        if (cordavez != segencia.Length)
+        {
+            erros++;
+            UIManager.instance.atualizarerros(erros);
+            gerarseguencias();
+        }
+    }
 }
+
